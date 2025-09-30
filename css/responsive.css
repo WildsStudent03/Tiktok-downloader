@@ -1,0 +1,60 @@
+/* Responsive styles for Multi Downloader Hub */
+
+/* Base styles */
+* {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .download-btn {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .history-item:hover {
+        transform: translateX(4px) translateY(-1px);
+    }
+}
+
+@media (max-width: 640px) {
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .bg-white\/10 {
+        padding: 1.5rem;
+    }
+    
+    .nav-btn {
+        padding: 0.5rem 1rem;
+    }
+    
+    .history-item {
+        padding: 1rem;
+    }
+}

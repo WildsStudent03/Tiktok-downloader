@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Downloader Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body class="bg-gradient min-h-screen text-white">
+    <!-- Navigation Component -->
+    <div id="navigation-container"></div>
+    
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-3xl mx-auto">
+            <!-- Downloader Component -->
+            <div id="downloader-container"></div>
+            
+            <!-- History Component -->
+            <div id="history-container"></div>
+        </div>
+    </div>
+    
+    <!-- Import JavaScript modules -->
+    <script type="module" src="./js/app.js"></script>
+    
+    <!-- HTML Component Loader -->
+    <script>
+        // Load HTML components
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navigation
+            fetch('/components/navigation.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('navigation-container').innerHTML = html;
+                });
+                
+            // Load downloader
+            fetch('/components/downloader.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('downloader-container').innerHTML = html;
+                });
+                
+            // Load history
+            fetch('/components/history.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('history-container').innerHTML = html;
+                });
+        });
+    </script>
+</body>
+</html>
